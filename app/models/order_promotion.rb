@@ -1,0 +1,2 @@
+class OrderPromotion < ApplicationRecord
+end

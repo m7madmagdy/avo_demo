@@ -1,25 +1,26 @@
-<div class="flex flex-col space-y-4 p-4">
-  <!-- Dropdowns for filters -->
-  <div class="flex space-x-4">
-    <!-- Date Range Dropdown -->
-    <div>
-      <label for="time_range" class="block text-sm font-medium text-gray-700">Date Range</label>
-      <%= select_tag "time_range", options_for_select(["ALL", "7 days", "MTD", "QTD", "YTD", "TODAY"], params[:time_range]),
-        class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm",
-        data: { action: "change->dashboard-card-controller#connect" } %>
+<turbo-frame id="dashy_custom_card" turbo-visit-control="reload" class="flex flex-col space-y-4 p-4" data-controller="filter">
+  <!-- Filters Form -->
+  <form data-action="submit->filter#applyFilter" class="space-y-4">
+    <div class="flex space-x-4 items-end">
+      <!-- Dynamic Date Range Filter -->
+      <div>
+        <label for="start_date" class="block text-sm font-medium text-gray-700">Start Date</label>
+        <input type="date" name="start_date" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+      </div>
+      <div>
+        <label for="end_date" class="block text-sm font-medium text-gray-700">End Date</label>
+        <input type="date" name="end_date" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+      </div>
+      <div>
+        <button type="submit" class="px-4 py-2 text-black bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700">
+          Apply
+        </button>
+      </div>
     </div>
-
-    <!-- Country Dropdown -->
-    <div>
-      <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-      <%= select_tag "country", options_for_select(["Mexico", "Canada", "USA"], params[:country]),
-        class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm",
-        data: { action: "change->dashboard-card-controller#connect" } %>
-    </div>
-  </div>
+  </form>
 
   <!-- Users Count Result -->
-  <div class="text-lg font-semibold">
+  <div class="text-lg font-semibold mt-4">
     Total Users: <%= @card.result_data %>
   </div>
-</div>
+</turbo-frame>

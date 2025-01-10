@@ -1,4 +1,4 @@
-class Avo::Resources::User < Avo::BaseResource
+class Avo::Resources::PromotionAction < Avo::BaseResource
   # self.includes = []
   # self.attachments = []
   # self.search = {
@@ -7,9 +7,5 @@ class Avo::Resources::User < Avo::BaseResource
 
   def fields
     field :id, as: :id
-    field :email, as: :text
-
-    field :created_at, as: :date_time
-    field :updated_at, as: :date_time
   end
 end

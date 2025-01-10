@@ -127,8 +127,14 @@ GEM
     bcrypt_pbkdf (1.1.1-arm64-darwin)
     bcrypt_pbkdf (1.1.1-x86_64-darwin)
     benchmark (0.4.0)
+    better_errors (2.10.1)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+      rouge (>= 1.0.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
+    binding_of_caller (1.0.1)
+      debug_inspector (>= 1.2.0)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     brakeman (6.2.2)
@@ -150,6 +156,7 @@ GEM
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    debug_inspector (1.2.0)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -326,6 +333,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.0)
+    rouge (4.5.1)
     rubocop (1.69.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -460,6 +468,8 @@ PLATFORMS
 DEPENDENCIES
   avo (>= 3.2)
   avo-advanced (>= 3.2.0)!
+  better_errors
+  binding_of_caller
   bootsnap
   brakeman
   capybara
