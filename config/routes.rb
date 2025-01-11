@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Avo::Engine, at: Avo.configuration.root_path
+  mount RailsDevtools::Engine => "/devtools"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

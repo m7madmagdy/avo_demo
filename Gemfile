@@ -58,6 +58,7 @@ group :development do
   gem "web-console"
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rails_devtools'
 end
 
 group :test do
